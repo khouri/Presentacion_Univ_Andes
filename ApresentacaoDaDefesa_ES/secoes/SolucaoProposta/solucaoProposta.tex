@@ -1,0 +1,117 @@
+\section{Solución propuesta}
+
+\begin{frame}		
+	\begin{block}{Solución propuesta}
+		La solución propuesta en este Máster recomienda actividades que utilizan tres conceptos importantes en el área de los flujos de trabajo científicos: i) frecuencia de las actividades; ii) compatibilidad entre entrada y salida; y ii) semántica de actividad
+	\end{block}
+\end{frame}
+
+
+\begin{frame}		
+	\begin{block}{Desarrollo de ontologías}
+		La ontología se desarrolló utilizando la metodología esquelética, que contiene las siguientes fases:
+		\begin{enumerate}
+			\item Identificar el propósito
+			\item Construcción de ontologías:
+			\begin{enumerate}
+				\item Captura de ontologías
+				\item Codificación de ontología;
+				\item Integración con ontologías existentes
+			\end{enumerate}
+			\item Validación
+			\item Documentación
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}		
+	\begin{block}{Matriz de técnicas de literatura}
+		\begin{table}[htb]
+			\centering
+			\caption{Ejemplo de matriz de entrada para técnicas de literatura relacionadas}
+			\begin{tabular}{|c|c|c|c|c|}  \hline
+				\textbf{\emph{Workflow}} & \textbf{Activ \(\mathbf{01}\)} & \textbf{Activ \(\mathbf{02}\)} & \textbf{\(\mathbf{\ldots}\)} & \textbf{Activ \(\mathbf{280}\)}  \\ \hline
+				01 			  & 1 			  & 0 			  & \(\ldots\) 	  & 0  				\\ \hline
+				02 			  & 1 			  & 1 			  & \(\ldots\) 	  & 1  				\\ \hline
+				03 			  & 1 			  & 0 			  & \(\ldots\) 	  & 1  				\\ \hline
+				\(\vdots\) 		  			  & \(\vdots\) 	  & \(\vdots\) 	  & \(\vdots\) 	  & \(\vdots\) 		\\ \hline
+				73 			  & 1 			  & 0 			  & \(\ldots\) 	  & 0  				\\ \hline
+			\end{tabular}
+			\label{tabela_matriz_de_dados}
+			%\vspace{0.1cm}
+			%\source{\varAutorData}
+		\end{table}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}		
+	\begin{block}{Matriz para técnicas de clasificación}
+		Las actividades más comunes \(59\) se utilizan para garantizar el equilibrio del clasificador en el que se replican.
+		\begin{table}[!htb]
+			\tiny
+			\centering
+			%\caption{Exemplo de matriz de entrada para técnicas de classificação e regressão}
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|}  \hline
+				\textbf{\(\#\)} & \textbf{\emph{Workflow}} & \textbf{Ativ \(\mathbf{01}\)} & \textbf{Activ \(\mathbf{02}\)} & \textbf{\(\mathbf{\ldots}\)}  & \textbf{Activ \(\mathbf{279}\)} & \textbf{Activ \(\mathbf{280}\)} & \textbf{Etiqueta} \\ \hline
+				
+				1	&		01		 			   & 1 			  & 0 			  & \(\ldots\) 	  & 0 & 0  			& T	\\ \hline
+				2	&		01 					   & 1 			  & 0 			  & \(\ldots\) 	  & 0 & 0  			& T	\\ \hline
+				\(\vdots\)  &  \(\vdots\) 	   	   & \(\vdots\)   & \(\vdots\) 	  & \(\vdots\) 	  & \(\vdots\) & \(\vdots\) & \(\vdots\)\\ \hline
+				59	&		01 					   & 1 			  & 0 			  & \(\ldots\) 	  & 0 & 0   		& T	\\ \hline
+				1	&		01		 			   & 0 (eliminado) 		  & 1 (añadido) &\(\ldots\)& 1 & 0	& F	\\ \hline
+				2	&		01 					   & 0 (eliminado)& 0 		  & \(\ldots\) 	  & 1 (añadido) & 0& F	\\ \hline
+				\(\vdots\)  &		\(\vdots\) 	   & \(\vdots\) & \(\vdots\) 	  & \(\vdots\) 	  & \(\vdots\) & \(\vdots\) & \(\vdots\) \\ \hline
+				59	&		01 					   & 0 (eliminado)			  & 0 			  & \(\ldots\) & 0 & 1 (añadido)& F \\ \hline
+				&\(\vdots\) & & & & & & 																		\\ \hline
+				1	&		73		 			   & 1 			  & 1  & \(\ldots\) 	  & 0 & 0  			& T	\\ \hline
+				2	&		73 					   & 1 			  & 1  & \(\ldots\) 	  & 0 & 0  			& T	\\ \hline
+				\(\vdots\)  &		\(\vdots\) 	   & \(\vdots\)   & \(\vdots\) 	  & \(\vdots\) 	  & \(\vdots\) & \(\vdots\) & \(\vdots\) \\ \hline
+				59	&		73 					   & 1 			  & 1  & \(\ldots\) 	  & 0 & 0   		& T	\\ \hline
+				1	&		73		 			   & 1 (añadido) & 0 (eliminado)  & \(\ldots\) 	  & 1 & 0   		& F	\\ \hline
+				2	&		73 					   & 1 			  & 0 (eliminado)  & \(\ldots\)& 1 (añadido) & 0  & F	\\ \hline
+				\(\vdots\)  &		\(\vdots\) 	   & \(\vdots\)   & \(\vdots\) 	  & \(\vdots\) 	  & \(\vdots\) & \(\vdots\) & \(\vdots\)	\\ \hline
+				59	&		73 					   & 1 			  & 0 (eliminado)  & \(\ldots\) 	  & 0 & 1 (añadido) & F	\\ \hline
+			\end{tabular}
+			\label{tabela_matriz_de_dados_adapatada_classificacao_regressao}
+			%\vspace{0.1cm}
+			%\source{\varAutorData}
+		\end{table}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}		
+	\begin{block}{Técnica propuesta}
+		Para explicar la técnica propuesta se utilizará la figura:
+				\begin{figure}
+					\begin{minipage}[b]{0.8\textwidth}
+						\includegraphics[width=\textwidth]{./secoes/SolucaoProposta/recomendacaofreqontologia.eps}
+						\caption{Ejemplo de base de datos de flujos de trabajo científicos}
+					\end{minipage}
+				\end{figure}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}		
+	\begin{block}{Técnica propuesta}
+		Recomendación para la actividad \emph{Z} ordenada por frecuencia y concepto ontológico.
+		\begin{table}[!htb]
+			\centering
+			%\caption{Recomendação para a atividade \emph{Z} ordenada por frequência e conceito ontológico}
+			\begin{tabular}{|c|c|c|c|}  \hline
+				\textbf{Posición de la lista} & \textbf{Activ} & \textbf{Frecuencia} & \textbf{Actividad de notas} 	\\ \hline
+				1				& W 				& 3 				& BLAST				\\ \hline
+				2				& X 				& 2 				& FAST, CLUSTAL		\\ \hline
+				3				& Q 				& 1 				& SNAP DRAGONS		\\ \hline
+				\(\vdots\)		& \(\vdots\)		& \(\vdots\) 		& \(\vdots\)		\\ \hline
+				280				& \(\vdots\)		& \(\vdots\)		& \(\vdots\)	\\ \hline
+			\end{tabular}
+			\label{tabela_lista_recomendacao_ordenada_frequencia}
+			%\vspace{0.1cm}
+			%\source{\varAutorData}
+		\end{table}		
+	\end{block}
+\end{frame}
