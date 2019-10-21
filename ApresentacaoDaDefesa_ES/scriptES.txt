@@ -1,11 +1,9 @@
-
-
 5000/5000
 Limite de caracteres: 5000
 De lo que hablaré:
 
-Hola caballeros, mi nombre es Adilson Khouri. Soy un maestro de la Universidad de São Paulo y estudiante de doctorado.
-Tengo 31 años y mi línea de investigación es el aprendizaje automático, en esta presentación hablaré sobre los sistemas de recomendación aplicados en los flujos de trabajo científicos.
+Hola, mi nombre es Adilson Khouri. Tengo maestria de la Universidad de São Paulo y estudiante de doctorado.
+Tengo 31 años y mi línea de investigación es el machine learning, en esta presentación hablaré sobre los sistemas de recomendación aplicados en los flujos de trabajo científicos.
 
 (diapositiva 1)
 El término e-Science es la unión entre la informática y otras áreas como la biología, la física, la química, entre otras. Cuando los informáticos proporcionan herramientas para otras áreas, carecen de conocimientos informáticos avanzados y, a menudo, no pueden programar computadoras.
@@ -14,20 +12,20 @@ Los sistemas de gestión de flujo de trabajo científico son un software que per
 
 Entre otras funciones, los sistemas de gestión de flujo de trabajo científico le permiten ver grandes cantidades de datos, realizar cálculos matemáticos y analizar genomas.
 
-Muchos de estos bloques de código fuente ya existen y es suficiente para que el científico lo encuentre entre los miles de bloques y lo reutilice. Encontrar un bloque entre miles es una actividad compleja y que requiere mucho tiempo, y para tratar de minimizar este problema surgieron los sistemas de recomendación para flujos de trabajo científicos. Que durante la construcción de un flujo de trabajo sugiere al científico una nueva actividad (que es útil para él en este flujo de trabajo)
+Muchos de estos bloques de código fuente ya existen y son suficiente para que el científico lo encuentre entre los miles de bloques y lo reutilice. Encontrar un bloque entre miles es una actividad compleja y que requiere mucho tiempo, y para tratar de minimizar este problema surgieron los sistemas de recomendación para flujos de trabajo científicos. Que durante la construcción de un flujo de trabajo le recomienda al científico una nueva actividad (que le es útil para él en este flujo de trabajo)
 
 (diapositiva 4)
 En esta maestría desarrollé una técnica de recomendación de actividad en flujos de trabajo científicos usando ontologías, frecuencia de pares de actividad, entrada y salida de actividad.
 
 (diapositiva 5)
-Los objetivos específicos fueron construir una base de flujos de trabajo científicos, modelar el problema de recomendación como un problema de clasificación / regresión y una comparación entre diferentes técnicas en la literatura.
+Los objetivos específicos fueron construir una base de flujos de trabajo científicos, modelar el problema de recomendación como un problema de clasificación/regresión y una comparación entre diferentes técnicas en la literatura.
 
 (diapositiva 6)
 Conceptos fundamentales (mostrar imagen)
 Sistemas de gestión de flujo de trabajo científico
 
 (diapositiva 7)
-En esta figura podemos ver un sistema de gestión de flujo de trabajo científico, está claro que las actividades están conectadas y se debe respetar la tipificación de datos. Además, cada actividad tiene varios parámetros, como la dirección de un servicio web.
+En esta figura podemos ver un sistema de gestión de flujo de trabajo científico, está claro que las actividades están conectadas y se debe respetar la 'data type' de datos. Además, cada actividad tiene varios parámetros, como la dirección de un servicio web.
 
 (diapositiva 8)
 Los sistemas de recomendación están destinados a agregar elementos útiles a los usuarios, ya que la función u no está definida para todo el espacio CxS, por lo que estos sistemas tienen que extrapolar el espacio conocido.
@@ -36,32 +34,34 @@ Los sistemas de recomendación están destinados a agregar elementos útiles a l
 Estrategias de sistemas de recomendación
 
 
-Basado en contenido, donde sugiere elementos similares a los usuarios que han comprado elementos similares. Una persona que vea Harrry Potter 2 probablemente estará viendo Harry Potter 3
+Basado en contenido, donde sugiere elementos parecidos a los usuarios que han comprado elementos similares. Una persona que haya visto Harry Potter 2 probablemente va a ver Harry Potter 3
 
-Filtro colaborativo que sugiere elementos para usuarios similares. Si dos personas son iguales, sugiero los mismos elementos para ambos.
-
-
-Enfoque Hibrid considere una mezcla de ambos anteriores
+Colaborative Filter que sugiere elementos para usuarios similares. Si dos personas son iguales, sugiero los mismos elementos para ambos.
 
 
-Basado en la comunidad (usuarios amigos) todo lo que compran tus amigos te sugiero
+Hybrid Approach considere una mezcla de ambos anteriores
 
 
-Las personas demográficas que viven en regiones cercanas, de edades similares, que estudian en la misma universidad reciben la misma recomendación
+Community Based (usuarios amigos) todo lo que compren sus amigos le será sugerido para que usted lo compre
 
-Los sistemas basados ​​en el conocimiento que utilizan criterios de dominio explícitos para recomendar, conociendo el perfil de usuario (realizado por un área de MKT) recomendaremos dichos elementos ...
+
+Demographic Las personas que viven en regiones cercanas, de edades similares, que estudiaron en la misma universidad pueden recibir la misma recomendación
+
+Knowledge-based Los sistemas basados ​​en el conocimiento que utilizan criterios de dominio explícitos para recomendar, conociendo el perfil de usuario (realizado por un área de MKT) recomendaremos dichos elementos ...
 
 (diapositiva 10)
-La recomendación de actividades en los flujos de trabajo científicos requiere, más allá de extrapolar el espacio de elementos x intereses, garantizar la dependencia de entrada-salida (los tipos de datos de entrada deben coincidir con las salidas)
-Si una actividad A, antes de B, genera una cadena y un entero, entonces la actividad B debe ingresar una cadena y un entero. Además, si la cadena representa un DNI, no se puede enviar una cadena con la dirección de una persona.
+La recomendación de actividades en los flujos de trabajo científicos requiere, mucho mas que extrapolar el espacio de elementos x intereses, pero tambien garantizar la dependencia de entrada-salida (los tipos de datos de entrada deben coincidir con las salidas)
+Si una actividad A, antes de B, genera una string y un integer, entonces la actividad B debe ingresar una string y un integer. Además, si la cadena representa un DNI, no se puede enviar una cadena con la dirección de una persona.
 
-Finalmente, se debe respetar el orden de ejecución de las actividades, promediando un conjunto de números y luego cuadrar es diferente de cuadrar un conjunto de números y luego promediar
+Finalmente, se debe respetar el orden de ejecución de las actividades, sacar el promedio y elevar al cuadrado es diferente de elevar al cuadro y sacar promedio
+
+promediando un conjunto de números y luego cuadrar es diferente de cuadrar un conjunto de números y luego promediar
 
 (diapositiva 11)
 La ontología es un modelo de representación del conocimiento que se puede utilizar para anotar semánticamente la actividad.
 
 (diapositiva 12)
-Los experimentos se validaron utilizando una validación cruzada de 10 veces, estrategia de validación ML clásica. Que es cuando dividimos los datos en 9 partes de entrenamiento, 1 parte de prueba y variamos el conjunto de prueba en cada ronda como en esta figura.
+Los experimentos se testearon utilizando una validación cruzada de 10 veces, estrategia de validación ML clásica. Que es cuando dividimos los datos en 9 partes de entrenamiento, 1 parte de prueba y variamos el conjunto de prueba en cada ronda como en esta figura.
 
 (diapositiva 13)
 Recomendación de los bancos de flujo de trabajo:
@@ -71,67 +71,66 @@ recomendar actividades con conjuntos de elementos más grandes
 
 (diapositiva 14)
 recomendación de clasificadores:
-el carrito es un árbol de decisión
-knn son los kvizinhos más cercanos
+CART es un árbol de decisión
+knn son los k nearest neighboors más cercanos
 Naive Bayes usa el teorema de Bayes para recomendar
-Red neuronal simple MLP
-Máquinas de vectores de soporte SVM
+Neural network simple MLP
+support vector machine SVM
 
 (diapositiva 15)
 recomendación de los regresores:
 
-CARRITO mismo árbol pero adaptado para regresión
+CART mismo árbol pero adaptado para regresión
 Splines MARS para definir el límite de decisión
 Binomial aproxima la respuesta por binomio para definir el límite de decisión
-Red neuronal como regresor
-SVM SVM para regresión
+neural networks como regresor
+SVM para regresión
 
 (diapositiva 16)
 Recomendación de clasificadores compuestos
 Conjunto SVM
-Bosque de rotación
+Rotation Forest
 
 
 (diapositiva 17)
-Se realizó una revisión sistemática para encontrar el estado del arte en la literatura y se realizó una revisión sistemática. Para encontrar el estado del arte en el área de recomendación de flujos de trabajo científicos, comprender el problema, encontrar términos específicos del área, definir palabras clave.
+Se realizó una revisión sistemática para encontrar el estado del arte en la literatura de recomendación de flujos de trabajo científicos, comprender el problema, encontrar términos específicos del área, definir palabras clave.
 
 
 (diapositiva 18)
 Aquí podemos ver la cantidad de artículos aceptados, eliminados y repetidos que encontramos utilizando la revisión sistemática en cada base de datos de computación digital y la cantidad de artículos publicados por año.
 
 
-(diapositiva 19) hay un problema con esta diapositiva
-En esta diapositiva podemos ver las técnicas más utilizadas: procedencia, seguida de: entrada / salida, ontología, frecuencia y ontología, conjuntos de elementos, entre otros.
+(diapositiva 19)
+En esta diapositiva podemos ver las técnicas más utilizadas: procedencia, seguida de: entrada/salida, ontología, frecuencia y ontología, itemsets, entre otros.
 
 (diapositiva 20)
 Las principales ventajas de la técnica propuesta, en relación con las de la literatura relacionada, son considerar las dependencias de entrada y salida, la semántica y la frecuencia de las actividades y no tenemos requisitos previos tales como:
 datos de procedencia, redes sociales y otros
 
 (diapositiva 21)
-La solución propuesta en este máster recomienda actividades que utilizan tres conceptos importantes en el área de los flujos de trabajo científicos: i) frecuencia de actividades; ii) compatibilidad entre entrada y salida; y ii) semántica de actividad
+La solución propuesta en esta maestria recomiendar actividades que utilizen tres conceptos importantes en el área de los flujos de trabajo científicos: i) frecuencia de actividades; ii) compatibilidad entre entrada y salida; y ii) semántica de actividad
 
 (diapositiva 22)
-Ontología utilizando metodología esquelética, para identificar el uso de ontología, construir ontología (capturar es tomar términos de dominio clave, codificar es programar y no tuvimos ningún paso de integración), validación y documentación
+Ontología utilizando metodología Skeletal, para identificar el uso de ontología. Construir ontología (construir es tomar términos de dominio clave, codificar es programar y no tuvimos ningún paso de integración), validación y documentación
 
 (diapositiva 23)
-La matriz utilizada para entrenar los modelos tiene 73 flujos de trabajo y 280 actividades, 0 representa ausencia de actividad y 1 representa actividad en ese flujo de trabajo.Esta matriz es muy escasa.
+La matriz utilizada para entrenar los modelos tiene 73 flujos de trabajo y 280 actividades, 0 representa ausencia de actividad y 1 representa actividad en ese flujo de trabajo. Esta matriz en que hay poca data (matriz alejado)
 
 (diapositiva 24)
 Para las técnicas basadas en la clasificación y la regresión, se repitieron las 59 actividades más frecuentes, se agregó una actividad (potencialmente la correcta) y se eliminó una actividad (la correcta). Si el sistema recomienda que se elimine la actividad en cualquier posición de la lista de recomendaciones, lo consideramos un éxito.
 
 (diapositiva 25 y diapositiva 26)
-La técnica propuesta utiliza la ontología desarrollada manualmente, que usamos para anotar los flujos de trabajo manualmente. Por ejemplo, al construir el flujo de trabajo de la figura, el usuario agrega las actividades: A, B y Z ... perderse. El sistema de nueva recomendación sugerirá la actividad W ya que tiene más frecuencia y la misma anotación ontológica.
+La técnica propuesta utiliza la ontología desarrollada manualmente, que usamos para anotar los flujos de trabajo tambien manualmente. Por ejemplo, al construir el flujo de trabajo de la figura, el usuario agrega las actividades: A, B y Z ... perdiendose. El sistema de nueva recomendación va a sugerir la actividad W (uve doble) que tiene más frecuencia y la misma anotación ontológica.
 
 (diapositiva 27)
 En esta diapositiva podemos ver todas las técnicas de recomendación probadas usando las métricas
 dado que la salida recomendada del sistema es una lista
 S @ k: ¿En qué posición se ubicó la actividad correcta?
-MRR 1 sobre la posición promedio correcta de la lista.
+MRR uno dividido por la posición promedio correcta de la lista.
 
 (diapositiva 28)
 Usando la tabla de la diapositiva anterior, sabemos que:
 El mayor uso de información mejoró el modelo, los regresores fueron mejores que los clasificadores, los clasificadores compuestos tuvieron un buen desempeño, la conversión de valores continuos mejoró el rendimiento
-
 
 (diapositiva 29)
 revisión sistemática
@@ -141,24 +140,23 @@ publicación de 3 artículos
 
 (diapositiva 30)
 Al comparar todas las técnicas, se encontraron ciertos aspectos del conjunto de datos, como el hecho de que las actividades no eran independientes; el problema no es linealmente separable; y que las técnicas de agrupamiento no eran adecuadas para resolver este problema.
-Con la excepción de SVM, los regresores proporcionaron soluciones más precisas que los clasificadores, y agregar información a los sistemas de recomendación mejoró su precisión.
-
+Con la excepción de SVM, los regresores proporcionaron soluciones más precisas que los clasificadores, y ademas al agregar información a los sistemas de recomendación mejoró su precisión.
 
 (diapositivas 31, 32)
 Trabajos futuros
-Use otros clasificadores compuestos para recomendar actividades;
+Usar otros clasificadores compuestos para recomendar actividades;
 
 Crear nuevas estrategias de recomendación basadas en las redes sociales de investigadores o sus grupos de investigación;
 
 Obtener información de procedencia de flujos de trabajo y agregarla a los sistemas de recomendación;
 
-Utilice actividades de otras áreas de investigación de SGWC y / u otras (además de bioinformática);
+Utilizar actividades de otras áreas de investigación de sistemas de flujos de trabajo y / u otras (además de bioinformática);
 
-Estudie la relación entre la distribución de datos de entrada (actividad), su escasez y la relación que ambos tienen al aumentar o disminuir la precisión de las recomendaciones;
+Estudiar la relación entre la distribución de datos de entrada (actividad), su escasez y la relación que ambos tienen al aumentar o disminuir la precisión de las recomendaciones;
 
 Utilice técnicas de reducción de dimensionalidad para el conjunto de datos de entrada;
 
-Adapte el clasificador SVM para considerar las ontologías durante la maximización óptima del margen.
+Adapte el clasificador SVM para considerar las ontologías durante la maximización de la margen óptima 
 
 
 (diapositiva 33)
@@ -166,10 +164,10 @@ mis articulos
 
 
 (diapositiva 34)
-Gracias
+Muchas Gracias
 
 (diapositiva 35)
-Agradecemos al Decano de Estudios de Posgrado de la Universidad de São Paulo (USP) y a la agencia CAPES que brindó becas para el estudiante. Permitiendo completar este máster con publicaciones en el área de informática. También agradecemos al profesor Clodoaldo Aparecido de Lima por responder preguntas sobre la técnica SVM.
+Agradecemos al Decano de Estudios de Posgrado de la Universidad de São Paulo (USP), a la agencia CAPES que brindó becas para el estudiante y a profesor Roberto Ortiz de 'la casa de idiomas y cultura' Permitiendo completar esta maestria con publicaciones en el área de informática. También agradecemos al profesor Clodoaldo Aparecido de Lima por responder preguntas sobre la técnica SVM.
 Enviar feedback
 Histórico
 Salvas
