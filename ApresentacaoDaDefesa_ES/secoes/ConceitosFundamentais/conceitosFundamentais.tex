@@ -28,12 +28,10 @@
 
 \begin{frame}		
 	\begin{block}{}
-		Los sistemas de recomendación están destinados a \textbf{recomendar elementos útiles} a los usuarios:
+		Los sistemas de recomendación están destinados a \textbf{sugerir elementos útiles} a los usuarios:
 		\begin{eqnarray}
 		\forall c \in C,  \quad s_{c}^{'} =  \operatorname*{arg\,max}_{s \in S} u(c,s) \label{formalizar_recomendacao}
 		\end{eqnarray}
-		
-%		A função utilidade \(u\) não está definida para todo o espaço \(C \times S\), isso força os sistemas de recomendação a extrapolar o espaço conhecido.
 		La función de utilidad \(u\) no está definida para todo el espacio \(C \times S\), esto obliga a los sistemas de recomendación a extrapolar el espacio conocido.
 	\end{block}
 \end{frame}
@@ -47,7 +45,7 @@
 			\item \emph{Content-based}
 			\item \emph{Collaborative Filter (usuarios similares)}
 			\item \emph{Hibrid Approach}
-			\item \emph{Community Based (usuarios amigables)}
+			\item \emph{Community Based (usuarios amigos)}
 			\item \emph{Demographic}
 			\item \emph{Knowledge-based}
 		\end{enumerate}
@@ -57,7 +55,7 @@
 
 \begin{frame}		
 	\begin{block}{}
-		\textbf{Recomendar actividades en flujos de trabajo científicos} requiere, además de la extrapolación mencionada anteriormente, considerar las restricciones:
+		\textbf{Recomendar actividades en flujos de trabajo científicos} requiere, además de la extrapolación mencionada anteriormente, considerar las seguientes restricciones:
 		\begin{enumerate}
 			\item Dependencia entre entrada y salida de actividades
 			\item Dependencia semántica
@@ -69,7 +67,7 @@
 
 \begin{frame}
 	\begin{block}{}
-		\textbf{Ontology} es un modelo para la representación del conocimiento, que se puede utilizar para anotar semánticamente actividades.
+		\textbf{Ontología} es un modelo para la representación del conocimiento, que se puede utilizar para anotar semánticamente las actividades.
 		
 		\begin{figure}
 			\begin{minipage}[b]{0.7\textwidth}
@@ -82,7 +80,7 @@
 
 \begin{frame}
 	\begin{block}{}
-		Los experimentos serán validados por \emph{validación cruzada 10 veces}, cada ronda calculará las métricas:
+		Los experimentos serán testeados por \emph{validación cruzada 10 veces}, cada ronda calculará las métricas:
 		\begin{enumerate}
 			\item \emph{Sucess at rank k} (\(S@k\)).
 			\item \emph{Mean Reciprocal Rank} (MRR).		
@@ -91,7 +89,7 @@
 		\begin{figure}
 			\begin{minipage}[b]{0.9\textwidth}
 				\includegraphics[width=\textwidth]{./secoes/ConceitosFundamentais/10FOLDCROSS.eps}
-				\caption{Exemplo de \emph{10-fold cross validation}}
+				\caption{Ejemplo de \emph{10-fold cross validation}}
 			\end{minipage}
 		\end{figure}
 		
@@ -116,7 +114,7 @@
 			\item CART;
 			\item KNN;
 			\item Naive Bayes;
-			\item Rede Neural (MLP);
+			\item Redes Neuronales (MLP);
 			\item SVM (C-SVM).		
 		\end{enumerate}
 	\end{block}
@@ -129,7 +127,7 @@
 			\item CART;
 			\item MARS;
 			\item Binomial;
-			\item Rede Neural (MLP);
+			\item Redes Neuronales (MLP);
 			\item SVM (\(\epsilon\)-SVM).		
 		\end{enumerate}
 	\end{block}

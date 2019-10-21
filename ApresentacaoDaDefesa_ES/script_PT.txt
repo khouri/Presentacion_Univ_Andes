@@ -1,0 +1,169 @@
+O que vou falar:
+
+Olá senhores, meu nome é Adilson Khouri sou mestre pela Universidade de São Paulo e Estudande de doutorado.
+Tenho 31 anos e minha linha de pesquisa é machine learning, nessa apresentação vou falar sobre sistemas de recomendação aplicados em workflows científicos.
+
+(slide 1)
+O termo e-Science é a junção entre ciência da computação e outras áreas como biologia, física, química, entre outras. Onde os cientistas da computação fornecem ferramentas para as outras áreas, que não tem conhecimento computacional avançado e muitas vezes não podem programar computadores.
+
+Sistemas gerenciadores de workflow científicos são softwares que permitem pessoas sem conhecimentos avançados em computação a usarem blocos de codigo fonte prontos, conectá-los e produzir uma saída. 
+
+Entre outras funções os Sistemas gerenciadores de workflow científicos permitem visualizar grandes quantidades de dados, realizar calculos matematicos e analisar genomas. 
+
+Muitos desses blocos de código fonte já existem e basta que o cientista apenas encontre-o entre os milhares de blocos e reutilize-o. Encontrar um bloco entre milhares é uma atividade complexa e demorada, para tentar minimizar esse problema surgiram os sistemas recomendadores para workflows científicos. Que durante a construção de um workflow sugere para o cientista uma nova atividade (que seja útil para ele nesse workflow)
+
+(slide 4)
+Nesse mestrado desenvolvi uma técnica de recomendação de atividades em workflows científicos usando ontologias, frequencia de pares de atividades, entrada e saída de atividades
+
+(slide 5)
+Os objetivos específicos foram construir uma base de workflows científicos, modelagem do problema de recomendação como um problema de classificação/regressão e uma comparação entre diferentes técnicas da literatura.
+
+(slide 6)
+Conceitos fundamentais (mostrar figura)
+Sistemas Gerenciadores de Workflows Científicos
+
+(slide 7)
+Nessa figura podemos ver um sistema gerenciador de workflow científico, percebe-se que as atividades são conectadas e a tipagem de dados deve ser respeitada. Além disso, cada atividade tem vários parâmetros, como o endereço de um serviço web.
+
+(slide 8)
+Sistemas de recomendação tem por objetivo comendar itens uteis para os usuários a função u não está definida para todo o espaço CxS por isso esses sistemas tem que extrapolar o espaço conhecido.
+
+(slide 9)
+Estratégias de sistemas de recomendação 
+
+
+Baseado em conteudo, onde sugere itens similares a usuários que tenham comprado itens parecidos. Uma pesso que assiste Harrry Potter 2 muito provavelmente vai assistir Harry Potter 3
+
+Filtro colaborativo que sugere items para usuários parecidos, Se duas pessoas são parecidas sugiro os mesmos itens para ambas.
+
+
+Hibrid Approach considere um mix de ambas as anteriores
+
+
+Community Based (usuários amigos) tudo que seus amigos compram eu sugiro para vc
+
+
+Demographic pessoas que vivem em regiões próximas, tem idades parecidas, estudaram no mesmo colégio recebem a mesma recomendação
+
+Knowledge-based sistemas que usam criterios de domínio explicito para recomendar, sabendo o prefil do usário (realizado por uma area de MKT) vamos recomendar tais items...
+
+(slide 10)
+Recomendar atividades em workflows científicos exige além da extrapolação do espaço de itens x interesses, garantir a dependencia de entrada x saída (tipos de dados de entrada devem ser os mesmo dos das saidas)
+Se uma atividade A, anterior a B, tem como saída uma string e um inteiro, a atividade B deve ter como entrada uma string e um inteiro. Além disso se a string representa um DNI não pode ser enviado um string com endereço de uma pessoa.
+
+Por fim, a ordem de execução das atividades deve ser respeitado, calcular a média de um conjunto de números e depois elevar ao quadrado é diferente de elevar ao quadrado um conjunto de número e depois calcular a média
+
+(slide 11)
+Ontologia é um modelo de representacao de conhecimento que pode ser usada para anotar semanticamente a atividade
+
+(slide 12)
+Os experimentos foram validados usando um 10-fold cross validation, estratégia clássica de validação de ML. Que é quando separamos os dados em 9 partes de treino, 1 de teste e variamos o conjunto de teste a cada rodada como nessa figura
+
+(slide 13)
+Recomendação a partir de bancos de workflows:
+
+recomendar atividades com maior frequência
+recomendar atividades com maior itemsets
+
+(slide 14)
+recomendação por classificadores: 
+cart é uma arvore de decisão
+knn são os kvizinhos mais próximos
+Naive Bayes usa teorema de Bayes para recomendar
+Rede neural MLP simples
+SVM maquinas de vetor de suporte
+
+(slide 15)
+recomendação por regressores:
+
+CART mesma árvore porém adaptada para regressão
+MARS splines para definir a fronteira de decisão
+Binomial aproxima a resposta por uma binomial para definir a fronteira de decisão
+Rede Neural como regressor
+SVM SVM para regressão
+
+(slide 16)
+Recomendação a partir de classificadores compostos
+ensemble de SVM
+Rotation Forest
+
+(slide 17)
+Foi feita uma revisão sistemática para encontrar o estado da arte na literatura fizemos uma revisão sistemática. para encontrar o estado da arte na área de recomendação de atividades de workflows científicos, compreender o problema, encontrar termos específicos da área, definir palavras chave.
+
+
+(slide 18)
+aqui podemos ver a quantidade de artigos aceitos, excluídos e repetidos que encontramos usando a revisão sistemática em cada base de dados digital da área de computação e a quantidade de artigos publicados por ano.
+
+
+(slide 19) tem problema nesse slide
+Nesse slide podemos ver as técnicas mais usadas: proveniência, seguida de: entrada/saída, ontologia, freq e ontologia, itemsets entre outras.
+
+(slide 20)
+As principais vantagens da técnica proposta, em relação as da literatura correlata, são considerar as dependências de entrada e saída, semântica e a frequência de atividades e não temos pré requisitos como:
+dados de proveniência, rede social e outros
+
+(slide 21)
+A solução proposta neste mestrado recomenda atividades usando três conceitos importantes na área de workflows científicos: i) frequência de atividades; ii) compatibilidade entre entrada e saída; e ii) semântica de atividades
+
+(slide 22)
+A ontologia usando a metodologia skeletal, para identificar o uso da ontologia, Construir a ontologia (capturar é pegar os termos chave do domínio, codificar é programar, e não tivemos etapa de integração), validação e documentação
+
+(slide 23)
+A matriz usada para treinar os modelos tem 73 workflows e 280 atividades, 0 representa ausência da atividade e 1 representa a atividade naquele workflow, Essa matriz é altamente esparsa.
+
+(slide 24)
+Para as técnicas baseadas em classificação e regressão, foram repetidadas as 59 atividades mais frequentes, foi adicionada uma atividade (potencialmente a correta) e removida uma atividade (a correta). Se o sistema recomendar a atividade removida em alguma posição da lista de recomendação então consideramos um acerto.
+
+(slide 25 e slide 26)
+A técnica proposta, usa a ontologia desenvolvida manualmentem, que usamos para anotar os workflows manualmente. Por exemplo, ao construir o workflow da figura, o usuário adiciona as atividades: A, B e Z... ficando perdido. O sistema de reocmendação vai sugerir a atividade W pois tem mais frequencia e mesma anotação ontológica.
+
+(slide 27)
+Nesse slide podemos ver todas as técnicas de recomendação testadas usando as métricas 
+dado que a saída da sistema de recomnedação é uma lista
+S@k: em qual posição a atividade correta estava localizada?
+MRR 1 sobre a posição correta média da lista.
+
+(slide 28)
+Usando a tabela do slide anterior sabemos que:
+O aumento de uso de informação melhorou o modelo, regressores foram melhores que classificadores, classificadores compostos tiveram um bom desempenho, converter valores continuos melhorou o desempenho
+
+
+(slide 29)
+revisão sistemática
+base de dados relacional de workflow científico
+Comparação de técnicas
+publicação de 3 artigos
+
+(slide 30)
+Ao comparar todas as técnicas, foram constatados determinados aspectos do conjunto de dados, como o fato das atividades não serem independentes; o problema não ser linearmente separável; e que técnicas de agrupamento não se mostraram adequadas para solucionar este problema.
+Com exceção do SVM, regressores apresentaram soluções mais precisas do que classificadores, além disso, adicionar informação nos sistemas de recomendação melhorou a precisão destes.
+
+
+(slide 31, 32)
+Trabalhos futuros
+Usar outros classificadores compostos na recomendação de atividades;
+
+Criar novas estratégias de recomendação baseadas em redes sociais de pesquisadores ou seus grupos de pesquisa;
+
+Obter informação sobre proveniência de workflows e adicionar esta aos sistemas de recomendação;
+
+Usar atividades de outros SGWC e/ou de outras áreas de pesquisa (além da bioinformática);
+
+Estudar a relação entre a distribuição dos dados de entrada (atividade), sua esparsidade e a relação que ambas possuem com o aumento ou redução da precisão das recomendações;
+
+Utilizar técnicas de redução de dimensionalidade para o conjunto de dados de entrada;
+
+Adaptar o classificador SVM para considerar ontologias durante a maximização da margem ótima.
+
+
+(slide 33)
+meus artigos
+
+
+(slide 34)
+Obrigado
+
+(slide 35)
+Agradecemos a Pró-Reitoria de Pós-Graduação da Universidade de São Paulo (USP) e a agência CAPES que forneceram bolsas de estudo para o estudante. Permitindo completar esse mestrado com publicações na área de computação. Além disso, agradecemos o professor Dr. Clodoaldo Aparecido de Lima por sanar dúvidas referentes a técnica SVM.
+
+ 
